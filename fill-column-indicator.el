@@ -3,7 +3,7 @@
 ;; Copyright (c) 2011 Alp Aker 
 
 ;; Author: Alp Aker <aker@pitt.edu>
-;; Version: 0.31
+;; Version: 0.32
 ;; Keywords: convenience
 
 ;; This program is free software; you can redistribute it and/or
@@ -366,7 +366,7 @@ for tips on troubleshooting.)"
           (if fci-made-display-table
               (setq buffer-display-table nil
                     fci-made-display-table nil)
-            (set-char-table-extra-slot 0 fci-prior-truncation-glyph)
+            (set-char-table-extra-slot buffer-display-table 0 fci-prior-truncation-glyph)
             (setq fci-prior-truncation-glyph nil)))
         (when (and fci-handle-line-move-visual
                    (boundp 'line-move-visual))
